@@ -1,8 +1,10 @@
+'use client'
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 const Step = ({step}) => {
     const {number,title} = step;
-    const currentStep = 1;
+    const currentStep = useSelector((store)=>store.onboarding.currentStep);
   return (
     <div className='flex flex-col md:flex-row items-center gap-3'>
         <div className={`w-8  h-8  text-slate-50
