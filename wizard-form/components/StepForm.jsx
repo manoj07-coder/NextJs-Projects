@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import PersonalForm from './StepForms/PersonalForm';
 import EducationForm from './StepForms/EducationForm';
@@ -5,10 +6,12 @@ import ConfirmForm from './StepForms/ConfirmForm';
 import ExperienceForm from './StepForms/ExperienceForm';
 import LanguageForm from './StepForms/LanguageForm';
 import SkillsForm from './StepForms/SkillsForm';
+import { useSelector } from 'react-redux';
 
 
 const StepForm = () => {
-    const currentStep = 1;
+    const currentStep = useSelector((store)=>store.onboarding.currentStep);
+    
     function renderForms(step){
         if(step === 1){
             return <PersonalForm />
